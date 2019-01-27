@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShiftCypherEncryptorDecryptor.Properties
+namespace ShiftCipherEncryptorDecryptor.Properties
 {
 
 
@@ -44,7 +44,7 @@ namespace ShiftCypherEncryptorDecryptor.Properties
             {
                 if ((resourceMan == null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ShiftCypherEncryptorDecryptor.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ShiftCipherEncryptorDecryptor.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

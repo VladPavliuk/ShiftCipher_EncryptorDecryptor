@@ -1,12 +1,16 @@
-﻿<Window x:Class="ShiftCypherEncryptorDecryptor.MainWindow"
+﻿<Window x:Class="ShiftCipherEncryptorDecryptor.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ShiftCypherEncryptorDecryptor"
+        xmlns:local="clr-namespace:ShiftCipherEncryptorDecryptor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Shift Chipher Encrypter" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
-        
+        <TextBox x:Name="TextBlockToEncrypt" HorizontalAlignment="Left" Height="182" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="774" TextChanged="TextBlockToEncrypt_TextChanged"/>
+        <TextBlock x:Name="EncryptedTextBlock" HorizontalAlignment="Left" Margin="10,197,0,0" TextWrapping="Wrap" Text="Insert text (only latin alphabet) to encrypt in the above text box and than, click encrypt button." VerticalAlignment="Top" Height="158" Width="774"/>
+        <Label Content="Shift Key" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top" Height="38" Width="101" FontSize="20"/>
+        <TextBox x:Name="TextBlockShiftKey" HorizontalAlignment="Left" Margin="116,360,0,22" TextWrapping="Wrap" Text="15" Width="120" FontSize="22" SpellCheck.IsEnabled="True" TextChanged="TextBlockShiftKey_TextChanged"/>
+        <Button x:Name="EncryptButton" Content="Encrypt" HorizontalAlignment="Left" Margin="628,360,0,0" VerticalAlignment="Top" Width="156" Height="38" FontSize="20" Click="EncryptButton_Click"/>
     </Grid>
 </Window>

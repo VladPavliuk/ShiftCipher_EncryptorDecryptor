@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShiftCypherEncryptorDecryptor.Properties
+namespace ShiftCipherEncryptorDecryptor.Properties
 {
 
 
