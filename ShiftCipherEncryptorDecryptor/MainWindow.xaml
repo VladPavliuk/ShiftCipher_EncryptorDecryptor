@@ -5,12 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShiftCipherEncryptorDecryptor"
         mc:Ignorable="d"
-        Title="Shift Chipher Encrypter" Height="450" Width="800" ResizeMode="NoResize">
+        Title="Shift Chipher Encryptor/Decryptor" Height="554.023" Width="800" ResizeMode="NoResize">
     <Grid>
-        <TextBox x:Name="TextBlockToEncrypt" HorizontalAlignment="Left" Height="182" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="774" TextChanged="TextBlockToEncrypt_TextChanged"/>
-        <TextBlock x:Name="EncryptedTextBlock" HorizontalAlignment="Left" Margin="10,197,0,0" TextWrapping="Wrap" Text="Insert text (only latin alphabet) to encrypt in the above text box and than, click encrypt button." VerticalAlignment="Top" Height="158" Width="774"/>
-        <Label Content="Shift Key" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top" Height="38" Width="101" FontSize="20"/>
-        <TextBox x:Name="TextBlockShiftKey" HorizontalAlignment="Left" Margin="116,360,0,22" TextWrapping="Wrap" Text="15" Width="120" FontSize="22" SpellCheck.IsEnabled="True" TextChanged="TextBlockShiftKey_TextChanged"/>
-        <Button x:Name="EncryptButton" Content="Encrypt" HorizontalAlignment="Left" Margin="628,360,0,0" VerticalAlignment="Top" Width="156" Height="38" FontSize="20" Click="EncryptButton_Click"/>
+        <TabControl HorizontalAlignment="Left" Height="505" Margin="10,10,0,0" VerticalAlignment="Top" Width="762">
+            <TabItem Header="Encryptor">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="TextBlockToEncrypt" HorizontalAlignment="Left" Height="182" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="736" TextChanged="TextBlockToEncrypt_TextChanged"/>
+                    <TextBox x:Name="EncryptedTextBlock" Background="Transparent" HorizontalAlignment="Left" Margin="10,197,0,0" TextWrapping="Wrap" Text="Insert text (only latin alphabet) to encrypt in the above text box and than, click encrypt button." VerticalAlignment="Top" Height="187" Width="736" IsReadOnly="True" BorderThickness="0"/>
+                    <Label Content="Shift Key" HorizontalAlignment="Left" Margin="10,389,0,0" VerticalAlignment="Top" Height="38" Width="101" FontSize="20"/>
+                    <TextBox x:Name="TextBlockShiftKey" HorizontalAlignment="Left" Margin="10,432,0,10" TextWrapping="Wrap" Text="15" Width="120" FontSize="22" SpellCheck.IsEnabled="True" TextChanged="TextBlockShiftKey_TextChanged"/>
+                    <Button x:Name="EncryptButton" Content="Encrypt" HorizontalAlignment="Left" Margin="590,429,0,0" VerticalAlignment="Top" Width="156" Height="38" FontSize="20" Click="EncryptButton_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Decryptor">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="TextBlockToDecrypt" HorizontalAlignment="Left" Height="182" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="736" TextChanged="TextBlockToDecrypt_TextChanged" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="DecryptedTextBlock" Background="Transparent" HorizontalAlignment="Left" Margin="10,197,0,0" TextWrapping="Wrap" Text="Insert text (only latin alphabet) to decrypt in the above text box and than, click decrypt button." VerticalAlignment="Top" Height="187" Width="736" Grid.ColumnSpan="2" IsReadOnly="True" BorderThickness="0"/>
+                    <Button x:Name="DecryptButton" Content="Decrypt" HorizontalAlignment="Left" Margin="573.227,429,0,0" VerticalAlignment="Top" Width="156" Height="38" FontSize="20" Click="DecryptButton_Click" Grid.Column="1"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

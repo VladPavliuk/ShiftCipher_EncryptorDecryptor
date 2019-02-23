@@ -12,11 +12,14 @@ namespace ShiftCipherEncryptorDecryptor
         private bool _isShiftKeyValue_IsValid = false;
         private bool _isTextToEncryptKeyValue_IsValid = false;
 
+        private bool _isTextToDecryptKeyValue_IsValid = false;
+
         public MainWindow()
         {
             InitializeComponent();
 
             EncryptButton.IsEnabled = false;
+            DecryptButton.IsEnabled = false;
         }
 
         private void EncryptButton_Click(object sender, RoutedEventArgs e)
@@ -45,7 +48,7 @@ namespace ShiftCipherEncryptorDecryptor
                 _isShiftKeyValue_IsValid = true;
             }
 
-            CheckButtonAvaliability();
+            CheckEncryptButtonAvaliability();
         }
 
         private void TextBlockToEncrypt_TextChanged(object sender, TextChangedEventArgs e)
@@ -61,13 +64,47 @@ namespace ShiftCipherEncryptorDecryptor
                 _isTextToEncryptKeyValue_IsValid = false;
             }
 
-            CheckButtonAvaliability();
+            CheckEncryptButtonAvaliability();
         }
 
-        private void CheckButtonAvaliability()
+        private void CheckEncryptButtonAvaliability()
         {
             if (EncryptButton != null)
                 EncryptButton.IsEnabled = _isTextToEncryptKeyValue_IsValid && _isShiftKeyValue_IsValid;
+        }
+
+        private void TextBlockToDecrypt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var insertedText = ((TextBox)sender).Text;
+
+            if (insertedText.Length > 0)
+            {
+                _isTextToDecryptKeyValue_IsValid = true;
+            }
+            else
+            {
+                _isTextToDecryptKeyValue_IsValid = false;
+            }
+
+            CheckDecryptButtonAvaliability();
+        }
+
+        private void CheckDecryptButtonAvaliability()
+        {
+            if (DecryptButton != null)
+                DecryptButton.IsEnabled = _isTextToDecryptKeyValue_IsValid;
+        }
+
+        private void DecryptButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (TextBlockToDecrypt.Text.Length > 0)
+            {
+                DecryptedTextBlock.Text = TextBlockToDecrypt.Text.ShiftChipherDecrypt(_shiftKey);
+            }
+            else
+            {
+                DecryptedTextBlock.Text = string.Empty;
+            }
         }
     }
 }
